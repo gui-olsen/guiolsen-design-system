@@ -1,0 +1,229 @@
+/* ============================================
+   gui·olsen — global design system
+   guiolsendesign.com
+   Version 1.0 — June 2026
+   ============================================ */
+
+/* ── Fonts ── */
+body, * {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    box-sizing: border-box;
+}
+
+/* ── Headings ── */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: #111111;
+    line-height: 1.15;
+}
+
+.elementor-widget-heading .elementor-heading-title {
+    font-family: 'Syne', sans-serif !important;
+}
+
+h1 { font-size: 40px; letter-spacing: -0.025em; }
+h2 { font-size: 28px; letter-spacing: -0.02em; }
+h3 { font-size: 18px; letter-spacing: -0.01em; font-weight: 600; }
+
+/* ── Body text ── */
+p {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.7;
+    color: #555555;
+}
+
+/* ── Links ── */
+a {
+    color: #0066FF;
+    text-decoration: none;
+    transition: color 150ms ease;
+}
+a:hover { color: #0052CC; }
+
+/* ── Buttons — all buttons, zero radius ── */
+.elementor-button,
+.elementor-button-wrapper .elementor-button {
+    border-radius: 0 !important;
+    font-family: 'Inter', sans-serif !important;
+    font-size: 14px !important;
+    font-weight: 500 !important;
+    letter-spacing: 0.01em !important;
+    transition: background 150ms ease, border-color 150ms ease !important;
+}
+
+/* Primary button */
+.elementor-button.btn-primary {
+    background-color: #0066FF !important;
+    color: #FFFFFF !important;
+    border: none !important;
+    padding: 10px 24px !important;
+}
+.elementor-button.btn-primary:hover {
+    background-color: #0052CC !important;
+}
+
+/* Secondary button */
+.elementor-button.btn-secondary {
+    background-color: transparent !important;
+    color: #111111 !important;
+    border: 1.5px solid #2A2A2A !important;
+    padding: 10px 24px !important;
+}
+.elementor-button.btn-secondary:hover {
+    border-color: #111111 !important;
+}
+
+/* Ghost / link button */
+.elementor-button.btn-ghost {
+    background-color: transparent !important;
+    color: #0066FF !important;
+    border: none !important;
+    text-decoration: underline !important;
+    text-underline-offset: 3px !important;
+}
+
+/* ── Eyebrow labels ── */
+.eyebrow {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #0066FF;
+    display: block;
+    margin-bottom: 12px;
+}
+
+/* ── Section backgrounds ── */
+.section-dark { background-color: #0F0F0F; }
+.section-light { background-color: #FFFFFF; }
+.section-grey { background-color: #F4F4F4; }
+.section-accent { background-color: #0066FF; }
+
+/* ── Text color helpers for dark sections ── */
+.section-dark h1,
+.section-dark h2,
+.section-dark h3,
+.section-dark h4 { color: #FFFFFF; }
+
+.section-dark p { color: #9999AA; }
+
+/* ── Card base ── */
+.card {
+    background: #F4F4F4;
+    border: 0.5px solid #E5E5E5;
+    border-radius: 4px;
+    padding: 24px;
+}
+
+/* ── Container max-width ── */
+.elementor-section.elementor-section-boxed > .elementor-container {
+    max-width: 1200px;
+}
+
+/* ── Section vertical padding defaults ── */
+.elementor-section {
+    padding-top: 96px;
+    padding-bottom: 96px;
+}
+
+/* ── Blog single post ── */
+.post-single {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 96px 24px;
+}
+
+.post-single .post-eyebrow {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #0066FF;
+    margin-bottom: 16px;
+    display: block;
+}
+
+.post-single h1 {
+    font-family: 'Syne', sans-serif;
+    font-size: 40px;
+    font-weight: 700;
+    letter-spacing: -0.025em;
+    color: #111111;
+    line-height: 1.15;
+    margin-bottom: 24px;
+}
+
+.post-single .post-meta {
+    font-size: 13px;
+    color: #999999;
+    margin-bottom: 48px;
+    padding-bottom: 48px;
+    border-bottom: 0.5px solid #E5E5E5;
+}
+
+.post-single .post-content p {
+    font-size: 17px;
+    line-height: 1.8;
+    color: #333333;
+    margin-bottom: 24px;
+}
+
+.post-single .post-content h2 {
+    font-family: 'Syne', sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: #111111;
+    margin: 48px 0 16px;
+}
+
+.post-single .post-content h3 {
+    font-family: 'Syne', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: #111111;
+    margin: 32px 0 12px;
+}
+
+.post-single .post-content img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+    margin: 32px 0;
+}
+
+.post-single .post-content a {
+    color: #0066FF;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.post-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    font-weight: 500;
+    color: #555555;
+    margin-bottom: 48px;
+    text-decoration: none;
+}
+
+.post-back:hover { color: #111111; }
+
+/* ── Responsive ── */
+@media (max-width: 1024px) {
+    .elementor-section { padding-top: 64px; padding-bottom: 64px; }
+    h1 { font-size: 32px; }
+    h2 { font-size: 24px; }
+}
+
+@media (max-width: 767px) {
+    .elementor-section { padding-top: 48px; padding-bottom: 48px; }
+    h1 { font-size: 28px; }
+    h2 { font-size: 20px; }
+    .post-single { padding: 48px 20px; }
+    .post-single h1 { font-size: 28px; }
+}
