@@ -1,0 +1,104 @@
+# Typography
+
+gui·olsen design system — type tokens  
+Version 1.0 — June 2026
+
+---
+
+## Typefaces
+
+| Role | Font | Weights | Source |
+|---|---|---|---|
+| Headings | Syne | 400, 500, 600, 700, 800 | Google Fonts |
+| Body | Inter | 400, 500, 600, 700 | Google Fonts |
+
+### Why this pairing
+
+Syne is geometric and distinctive — it has a unique character at large sizes
+that gives the brand personality without being decorative. Inter is clean,
+neutral, and highly legible at small sizes. Together they balance personality
+with readability.
+
+### Load via Google Fonts
+
+```html
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+```
+
+Or via WordPress functions.php:
+
+```php
+function guiolsen_enqueue_fonts() {
+    wp_enqueue_style(
+        'guiolsen-fonts',
+        'https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap',
+        [],
+        null
+    );
+}
+add_action( 'wp_enqueue_scripts', 'guiolsen_enqueue_fonts' );
+```
+
+---
+
+## Type scale
+
+| Role | Font | Size | Weight | Tracking | Line height |
+|---|---|---|---|---|---|
+| Display | Syne | 56–64px | 800 | -0.03em | 1.1 |
+| H1 | Syne | 40px | 700 | -0.025em | 1.15 |
+| H2 | Syne | 28px | 700 | -0.02em | 1.15 |
+| H3 / Card title | Syne | 18px | 600 | -0.01em | 1.2 |
+| Body large | Inter | 18px | 400 | normal | 1.7 |
+| Body | Inter | 16px | 400 | normal | 1.7 |
+| Body small | Inter | 14px | 400 | normal | 1.6 |
+| Eyebrow label | Inter | 11–12px | 500 | 0.08em | — |
+| Caption | Inter | 12px | 400 | normal | — |
+| Button | Inter | 14–15px | 500 | 0.01em | — |
+| Nav link | Inter | 13–14px | 400–500 | normal | — |
+
+---
+
+## CSS implementation
+
+```css
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: #111111;
+    line-height: 1.15;
+}
+
+h1 { font-size: 40px; letter-spacing: -0.025em; }
+h2 { font-size: 28px; letter-spacing: -0.02em; }
+h3 { font-size: 18px; letter-spacing: -0.01em; font-weight: 600; }
+
+body, p {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.7;
+    color: #555555;
+}
+
+.eyebrow {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #0066FF;
+}
+```
+
+---
+
+## Rules
+
+- Never use more than two font weights on a single screen. Default to 400 and 700.
+- Headings are always tight — letter-spacing -0.02em to -0.03em at display sizes.
+- Body text line-height is always 1.6–1.7. Never tighter on paragraphs.
+- Eyebrow labels use `#0066FF` and 0.08em tracking.
+- All text is set in sentence case. No Title Case in UI or headings.
+- Syne at display sizes (56–64px, weight 800) is where it really shines — use it for hero headlines.
