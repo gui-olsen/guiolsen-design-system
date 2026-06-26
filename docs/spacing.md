@@ -1,0 +1,84 @@
+# Spacing
+
+gui·olsen design system — spacing tokens  
+Version 1.0 — June 2026
+
+---
+
+## Base unit
+
+All spacing is based on a **4px base unit**. Every padding, margin, and gap
+value must be a multiple of 4. This keeps the layout consistent and
+intentional across every section and component.
+
+---
+
+## Spacing scale
+
+| Step | px | rem | Usage |
+|---|---|---|---|
+| 1 | 4px | 0.25rem | Icon gaps, tight inline spacing |
+| 2 | 8px | 0.5rem | Between label and input |
+| 3 | 12px | 0.75rem | Card internal gaps |
+| 4 | 16px | 1rem | Default component padding |
+| 6 | 24px | 1.5rem | Section sub-groups |
+| 8 | 32px | 2rem | Between cards in a grid |
+| 12 | 48px | 3rem | Section padding (mobile) |
+| 16 | 64px | 4rem | Section padding (tablet) |
+| 24 | 96px | 6rem | Section padding (desktop) |
+| 32 | 128px | 8rem | Hero vertical padding |
+
+---
+
+## Layout spacing
+
+| Property | Value |
+|---|---|
+| Section vertical padding — desktop | 96px |
+| Section vertical padding — tablet | 64px |
+| Section vertical padding — mobile | 48px |
+| Container max-width | 1200px |
+| Container horizontal padding — mobile | 24px |
+| Card grid gap | 24–32px |
+| Nav height | 64–72px |
+
+---
+
+## CSS implementation
+
+```css
+/* Section padding */
+.elementor-section {
+    padding-top: 96px;
+    padding-bottom: 96px;
+}
+
+@media (max-width: 1024px) {
+    .elementor-section {
+        padding-top: 64px;
+        padding-bottom: 64px;
+    }
+}
+
+@media (max-width: 767px) {
+    .elementor-section {
+        padding-top: 48px;
+        padding-bottom: 48px;
+    }
+}
+
+/* Container */
+.elementor-section.elementor-section-boxed > .elementor-container {
+    max-width: 1200px;
+}
+```
+
+---
+
+## Rules
+
+- Always use multiples of 4px — never arbitrary values like 13px or 27px.
+- Use rem for vertical rhythm (1rem, 1.5rem, 2rem).
+- Use px for component-internal gaps (8px, 12px, 16px).
+- Card grid gap is always 24px minimum, 32px preferred on desktop.
+- Never reduce section padding below 48px on any screen size.
