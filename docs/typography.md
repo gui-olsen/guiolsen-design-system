@@ -3,6 +3,8 @@
 gui·olsen design system — type tokens  
 Version 1.0 — June 2026
 
+> **Update (Aug 2026):** this describes the original hardcoded implementation for guiolsendesign.com. The reusable, variable-based version of this system — used across new client projects — now lives in [`/tokens`](../tokens/design-system-reference.md). Edit values there first.
+
 ---
 
 ## Typefaces

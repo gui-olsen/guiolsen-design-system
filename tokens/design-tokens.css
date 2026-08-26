@@ -1,0 +1,55 @@
+/*
+  gui·olsen — design tokens (CSS custom properties)
+  Generated from design-tokens.json — keep both in sync.
+
+  NEW PROJECT CHECKLIST: only edit the --color-* vars and the two --font-* vars below.
+  Everything else (sizes, spacing, radius) is the fixed system scale — leave as is.
+*/
+
+:root {
+  /* ---- per-project: edit these for every new client ---- */
+  --color-primary: #0F0F0F;
+  --color-primary-hover: #1A1A1A;
+  --color-primary-tint: #F4F4F4;
+  --color-secondary: #555555;
+  --color-secondary-hover: #6E6E6E;
+  --color-secondary-tint: #E5E5E5;
+  --color-accent: #0066FF;
+  --color-accent-hover: #0052CC;
+  --color-accent-tint: #E6F0FF;
+  --white: #FFFFFF;
+  --black: #0F0F0F;
+
+  --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-secondary: 'Syne', sans-serif;
+
+  /* ---- fixed system scale: don't edit per project ---- */
+  --font-display: 64px;
+  --font-h1: 40px;
+  --font-h2: 28px;
+  --font-h3: 18px;
+  --font-body-lg: 18px;
+  --font-body: 16px;
+  --font-body-sm: 14px;
+  --font-eyebrow: 12px;
+  --font-caption: 12px;
+  --font-button: 14px;
+
+  /* Spacing — name matches the px value */
+  --space-4: 4px;
+  --space-8: 8px;
+  --space-12: 12px;
+  --space-16: 16px;
+  --space-24: 24px;
+  --space-32: 32px;
+  --space-48: 48px;
+  --space-64: 64px;
+  --space-96: 96px;
+  --space-128: 128px;
+
+  --radius-none: 0px;
+  --radius-sm: 2px;
+  --radius-md: 4px;
+  --radius-lg: 8px;
+  --radius-rounded: 999px;
+}

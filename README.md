@@ -12,20 +12,22 @@ Visual language, tokens, and implementation guide for guiolsendesign.com
 
 | Folder | Contents |
 |---|---|
-| `/css` | Global CSS — design tokens, typography, components |
-| `/theme` | WordPress child theme files and page templates |
-| `/docs` | Design decisions documented in markdown |
+| `/tokens` | **Reusable design system (Aug 2026).** Variable-based tokens + classes — the base for every new client project. Edit the color/font variables here per project, then push to Figma and Elementor. See [`tokens/design-system-reference.md`](tokens/design-system-reference.md). |
+| `/css` | Global CSS for guiolsendesign.com specifically — hardcoded values, WordPress/Elementor selectors, blog post styles. Not project-portable. |
+| `/theme` | WordPress child theme files and page templates for guiolsendesign.com. |
+| `/docs` | Original (June 2026) design decisions for guiolsendesign.com, documented in markdown. Each file now links to the variable-based version in `/tokens`. |
 
 ---
 
 ## Quick reference
 
-**Fonts:** Syne (headings) + Inter (body)  
+**Fonts:** Syne (headings, `font-secondary`) + Inter (body, `font-primary`)  
 **Accent:** `#0066FF`  
-**Dark bg:** `#0F0F0F`  
-**Light bg:** `#FFFFFF`  
+**Primary:** `#0F0F0F`  
 **Max width:** `1200px`  
 **Base spacing unit:** `4px`
+
+For a new client project: copy `/tokens`, edit the 11 color variables + 2 font variables in `design-tokens.json`/`.css` for that brand. Everything else (sizes, spacing, radius, class definitions) stays as-is.
 
 ---
 

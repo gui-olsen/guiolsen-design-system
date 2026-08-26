@@ -1,0 +1,53 @@
+/*
+  gui·olsen — component classes
+  Built entirely on design-tokens.css. Every value here is a var() —
+  nothing hardcoded, so swapping the color/font vars reskins every class at once.
+*/
+
+@import url('design-tokens.css');
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap');
+
+* { box-sizing: border-box; }
+body { font-family: var(--font-primary); color: var(--color-primary); }
+a { color: var(--color-accent); text-decoration: none; }
+a:hover { color: var(--color-accent-hover); }
+h1, h2, h3, h4 { font-family: var(--font-secondary); letter-spacing: -0.02em; font-weight: 700; margin: 0; }
+
+/* ---------- Buttons ---------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-primary);
+  font-size: var(--font-button);
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  padding: 10px var(--space-24);
+  border-radius: var(--radius-none);
+  border: 1px solid transparent;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 150ms ease, border-color 150ms ease, color 150ms ease;
+}
+.btn--lg { padding: 12px var(--space-32); }
+
+.btn-primary { background: var(--color-accent); color: var(--white); }
+.btn-primary:hover { background: var(--color-accent-hover); }
+
+.btn-secondary { background: var(--color-primary); color: var(--white); }
+.btn-secondary:hover { background: var(--color-primary-hover); }
+
+.btn-outlined { background: transparent; border-color: var(--color-primary); color: var(--color-primary); }
+.btn-outlined:hover { border-color: var(--color-accent); color: var(--color-accent); }
+
+/* ---------- Typography ---------- */
+/* Headings use font-secondary (Syne) — everything else uses font-primary (Inter) */
+.text-display { font-family: var(--font-secondary); font-size: var(--font-display); font-weight: 800; letter-spacing: -0.03em; line-height: 1.1; color: var(--color-primary); }
+.text-h1       { font-family: var(--font-secondary); font-size: var(--font-h1); font-weight: 700; letter-spacing: -0.025em; line-height: 1.15; color: var(--color-primary); }
+.text-h2       { font-family: var(--font-secondary); font-size: var(--font-h2); font-weight: 700; letter-spacing: -0.02em; line-height: 1.15; color: var(--color-primary); }
+.text-h3       { font-family: var(--font-secondary); font-size: var(--font-h3); font-weight: 600; letter-spacing: -0.01em; line-height: 1.2; color: var(--color-primary); }
+.text-body-lg  { font-family: var(--font-primary); font-size: var(--font-body-lg); font-weight: 400; line-height: 1.7; color: var(--color-primary); }
+.text-body     { font-family: var(--font-primary); font-size: var(--font-body); font-weight: 400; line-height: 1.7; color: var(--color-primary); }
+.text-body-sm  { font-family: var(--font-primary); font-size: var(--font-body-sm); font-weight: 400; line-height: 1.6; color: var(--color-secondary); }
+.text-eyebrow  { font-family: var(--font-primary); font-size: var(--font-eyebrow); font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-accent); }
+.text-caption  { font-family: var(--font-primary); font-size: var(--font-caption); font-weight: 400; color: var(--color-secondary); }
