@@ -1,53 +1,165 @@
 {
-  "$description": "gui·olsen — design tokens (W3C Design Tokens format). 'color' and 'font.family' are the per-project layer: edit these for every new client, everything else is the fixed system scale.",
+  "$description": "gui·olsen — design tokens v2 (W3C Design Tokens format). Restructure of the Aug 2026 base: full 100–900 ramps for brand colors instead of single tint/hover pairs. 'color' base-500 values and 'font.family' are the per-project layer — edit these for every new client. Everything else is the fixed system scale. Color $values below marked PLACEHOLDER are provisional neutrals standing in until real brand hex is picked (in Figma or here) — swap before shipping.",
+
   "color": {
-    "primary": { "$value": "#0F0F0F", "$type": "color", "$description": "Brand primary — headings, primary text, secondary button fill. Edit per project." },
-    "primary-hover": { "$value": "#1A1A1A", "$type": "color", "$description": "Primary hover state. Edit per project." },
-    "primary-tint": { "$value": "#F4F4F4", "$type": "color", "$description": "Light tint of primary — subtle backgrounds. Edit per project." },
-    "secondary": { "$value": "#555555", "$type": "color", "$description": "Brand secondary — supporting/muted text. Edit per project." },
-    "secondary-hover": { "$value": "#6E6E6E", "$type": "color", "$description": "Secondary hover state. Edit per project." },
-    "secondary-tint": { "$value": "#E5E5E5", "$type": "color", "$description": "Light tint of secondary. Edit per project." },
-    "accent": { "$value": "#0066FF", "$type": "color", "$description": "Brand accent — CTA, links, eyebrow labels. Edit per project." },
-    "accent-hover": { "$value": "#0052CC", "$type": "color", "$description": "Accent hover state. Edit per project." },
-    "accent-tint": { "$value": "#E6F0FF", "$type": "color", "$description": "Accent tint — badges, subtle highlighted backgrounds. Edit per project." },
-    "white": { "$value": "#FFFFFF", "$type": "color", "$description": "Base neutral — rarely changes." },
-    "black": { "$value": "#0F0F0F", "$type": "color", "$description": "Base neutral — rarely changes." }
-  },
-  "font": {
-    "family": {
-      "primary": { "$value": "Inter, -apple-system, BlinkMacSystemFont, sans-serif", "$type": "fontFamily", "$description": "Body/UI typeface. Edit per project." },
-      "secondary": { "$value": "Syne, sans-serif", "$type": "fontFamily", "$description": "Heading typeface (display/h1/h2/h3). Edit per project." }
+    "primary": {
+      "100": { "$value": "#F5F5F5", "$type": "color" },
+      "200": { "$value": "#E6E6E6", "$type": "color" },
+      "300": { "$value": "#CFCFCF", "$type": "color" },
+      "400": { "$value": "#A8A8A8", "$type": "color" },
+      "500": { "$value": "#7A7A7A", "$type": "color", "$description": "Base. PLACEHOLDER — edit per project." },
+      "600": { "$value": "#565656", "$type": "color" },
+      "700": { "$value": "#3D3D3D", "$type": "color" },
+      "800": { "$value": "#262626", "$type": "color" },
+      "900": { "$value": "#141414", "$type": "color" }
     },
-    "size": {
-      "display": { "$value": "64px", "$type": "dimension" },
-      "h1": { "$value": "40px", "$type": "dimension" },
-      "h2": { "$value": "28px", "$type": "dimension" },
-      "h3": { "$value": "18px", "$type": "dimension" },
-      "body-lg": { "$value": "18px", "$type": "dimension" },
-      "body": { "$value": "16px", "$type": "dimension" },
-      "body-sm": { "$value": "14px", "$type": "dimension" },
-      "eyebrow": { "$value": "12px", "$type": "dimension" },
-      "caption": { "$value": "12px", "$type": "dimension" },
-      "button": { "$value": "14px", "$type": "dimension" }
+    "secondary": {
+      "100": { "$value": "#F6F3EF", "$type": "color" },
+      "200": { "$value": "#E9E3DA", "$type": "color" },
+      "300": { "$value": "#D3C9BB", "$type": "color" },
+      "400": { "$value": "#B0A08C", "$type": "color" },
+      "500": { "$value": "#8A7A66", "$type": "color", "$description": "Base. PLACEHOLDER — edit per project." },
+      "600": { "$value": "#635546", "$type": "color" },
+      "700": { "$value": "#453A2E", "$type": "color" },
+      "800": { "$value": "#2B241C", "$type": "color" },
+      "900": { "$value": "#16120E", "$type": "color" }
+    },
+    "accent": {
+      "100": { "$value": "#EEF0FC", "$type": "color" },
+      "200": { "$value": "#D6DBF6", "$type": "color" },
+      "300": { "$value": "#B0B9ED", "$type": "color", "$description": "Primary button focus ring." },
+      "400": { "$value": "#7C89DF", "$type": "color" },
+      "500": { "$value": "#4C5FD5", "$type": "color", "$description": "Base. PLACEHOLDER — edit per project." },
+      "600": { "$value": "#3948AD", "$type": "color" },
+      "700": { "$value": "#2A3585", "$type": "color" },
+      "800": { "$value": "#1C245D", "$type": "color" },
+      "900": { "$value": "#10163A", "$type": "color" }
+    },
+    "grey": {
+      "100": { "$value": "#F4F5F6", "$type": "color", "$description": "text-color-dark" },
+      "200": { "$value": "#E5E7E9", "$type": "color" },
+      "300": { "$value": "#CBD0D4", "$type": "color", "$description": "text-color-light" },
+      "400": { "$value": "#A6ADB4", "$type": "color" },
+      "500": { "$value": "#7C848C", "$type": "color", "$description": "Base." },
+      "600": { "$value": "#575F66", "$type": "color" },
+      "700": { "$value": "#3D434A", "$type": "color" },
+      "800": { "$value": "#262A2E", "$type": "color" },
+      "900": { "$value": "#131517", "$type": "color" }
+    },
+    "white": {
+      "400": { "$value": "#FFFFFF", "$type": "color" },
+      "500": { "$value": "#FFFFFF", "$type": "color", "$description": "Base — bg-light." },
+      "600": { "$value": "#F5F4F1", "$type": "color", "$description": "Off-white, for hover on white surfaces." }
+    },
+    "black": {
+      "400": { "$value": "#2B2B2B", "$type": "color" },
+      "500": { "$value": "#0F0F0F", "$type": "color", "$description": "Base — carried from v1 ink color." },
+      "600": { "$value": "#000000", "$type": "color" }
+    },
+    "alert": {
+      "400": { "$value": "#D9A54A", "$type": "color" },
+      "500": { "$value": "#B8791A", "$type": "color", "$description": "Base. Generic semantic amber." },
+      "600": { "$value": "#8F5C12", "$type": "color" }
+    },
+    "success": {
+      "400": { "$value": "#4FA868", "$type": "color" },
+      "500": { "$value": "#2E7D46", "$type": "color", "$description": "Base. Generic semantic green." },
+      "600": { "$value": "#1F5C32", "$type": "color" }
+    },
+    "error": {
+      "400": { "$value": "#DD6656", "$type": "color" },
+      "500": { "$value": "#C4362B", "$type": "color", "$description": "Base. Generic semantic red." },
+      "600": { "$value": "#96271F", "$type": "color" }
     }
   },
-  "space": {
+
+  "text-color": {
+    "light": { "$value": "{color.grey.300}", "$type": "color" },
+    "dark": { "$value": "{color.grey.100}", "$type": "color" },
+    "accent-light": { "$value": "{color.primary.500}", "$type": "color" },
+    "accent-dark": { "$value": "{color.accent.500}", "$type": "color" }
+  },
+  "bg": {
+    "light": { "$value": "{color.white.500}", "$type": "color" },
+    "dark": { "$value": "{color.primary.500}", "$type": "color" }
+  },
+
+  "font": {
+    "family": {
+      "display": { "$value": "'Fraunces', Georgia, serif", "$type": "fontFamily", "$description": "NEW — proposed. A high-contrast optical-size serif for hero/display moments only, set against geometric Syne + Inter for editorial contrast. Swap if it's not the direction — this is a starting pick, not a lock." },
+      "heading": { "$value": "Syne, sans-serif", "$type": "fontFamily", "$description": "Carried from v1. Edit per project." },
+      "text": { "$value": "Inter, -apple-system, BlinkMacSystemFont, sans-serif", "$type": "fontFamily", "$description": "Carried from v1. Edit per project." }
+    },
+    "size": {
+      "display": { "$value": "64px", "$type": "dimension", "$description": "Re-derived — see design notes. Hero only, sets font-display." },
+      "h1": { "$value": "48px", "$type": "dimension", "$description": "Re-derived from v1's 40px — bumped since display now sits above it in the hierarchy." },
+      "h2": { "$value": "36px", "$type": "dimension", "$description": "Re-derived from v1's 28px." },
+      "h3": { "$value": "28px", "$type": "dimension", "$description": "Re-derived from v1's 18px." },
+      "h4": { "$value": "20px", "$type": "dimension", "$description": "Re-derived — no v1 equivalent." },
+      "text-lg": { "$value": "18px", "$type": "dimension", "$description": "= v1 body-lg, unchanged — already on-scale." },
+      "text-sm": { "$value": "16px", "$type": "dimension", "$description": "Re-derived from v1's 14px, which wasn't on the new size scale." },
+      "button-text": { "$value": "16px", "$type": "dimension", "$description": "Re-derived from v1's 14px, to match text-sm and stay on-scale." },
+      "caption": { "$value": "12px", "$type": "dimension", "$description": "= v1 caption, unchanged." }
+    }
+  },
+
+  "size": {
     "4": { "$value": "4px", "$type": "dimension" },
+    "6": { "$value": "6px", "$type": "dimension" },
     "8": { "$value": "8px", "$type": "dimension" },
+    "10": { "$value": "10px", "$type": "dimension" },
     "12": { "$value": "12px", "$type": "dimension" },
     "16": { "$value": "16px", "$type": "dimension" },
+    "18": { "$value": "18px", "$type": "dimension" },
+    "20": { "$value": "20px", "$type": "dimension" },
     "24": { "$value": "24px", "$type": "dimension" },
+    "28": { "$value": "28px", "$type": "dimension" },
     "32": { "$value": "32px", "$type": "dimension" },
+    "36": { "$value": "36px", "$type": "dimension" },
+    "40": { "$value": "40px", "$type": "dimension" },
     "48": { "$value": "48px", "$type": "dimension" },
-    "64": { "$value": "64px", "$type": "dimension" },
-    "96": { "$value": "96px", "$type": "dimension" },
-    "128": { "$value": "128px", "$type": "dimension" }
+    "56": { "$value": "56px", "$type": "dimension" },
+    "64": { "$value": "64px", "$type": "dimension" }
   },
+
   "radius": {
-    "none": { "$value": "0px", "$type": "dimension" },
-    "sm": { "$value": "2px", "$type": "dimension" },
-    "md": { "$value": "4px", "$type": "dimension" },
-    "lg": { "$value": "8px", "$type": "dimension" },
-    "rounded": { "$value": "999px", "$type": "dimension", "$description": "Full pill — opt-in, not used by default (brand default is sharp corners)" }
+    "sm": { "$value": "4px", "$type": "dimension" },
+    "md": { "$value": "6px", "$type": "dimension" },
+    "xl": { "$value": "12px", "$type": "dimension" },
+    "rounded": { "$value": "9999px", "$type": "dimension", "$description": "Full pill." }
+  },
+
+  "stroke": {
+    "sm": { "$value": "1px", "$type": "dimension" },
+    "lg": { "$value": "2px", "$type": "dimension" }
+  },
+
+  "padding": {
+    "sm": { "$value": "16px", "$type": "dimension" },
+    "md": { "$value": "20px", "$type": "dimension" },
+    "lg": { "$value": "28px", "$type": "dimension" },
+    "xl": { "$value": "48px", "$type": "dimension" }
+  },
+  "gap": {
+    "sm": { "$value": "16px", "$type": "dimension" },
+    "md": { "$value": "20px", "$type": "dimension" },
+    "lg": { "$value": "28px", "$type": "dimension" },
+    "xl": { "$value": "48px", "$type": "dimension" }
+  },
+
+  "button-padding": {
+    "sm": { "$value": "10px 16px", "$type": "dimension" },
+    "md": { "$value": "12px 24px", "$type": "dimension" },
+    "lg": { "$value": "16px 32px", "$type": "dimension" }
+  },
+
+  "layout": {
+    "container-padding-desktop": { "$value": "20px", "$type": "dimension" },
+    "section-max-width-desktop": { "$value": "1200px", "$type": "dimension" },
+    "section-padding-desktop": { "$value": "96px", "$type": "dimension" },
+    "section-padding-tablet": { "$value": "64px", "$type": "dimension" },
+    "section-padding-mobile": { "$value": "56px", "$type": "dimension" },
+    "breakpoint-tablet": { "$value": "1024px", "$type": "dimension", "$description": "Elementor default tablet breakpoint (max-width)." },
+    "breakpoint-mobile": { "$value": "767px", "$type": "dimension", "$description": "Elementor default mobile breakpoint (max-width)." }
   }
 }
