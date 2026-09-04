@@ -1,55 +1,134 @@
 /*
-  gui·olsen — design tokens (CSS custom properties)
+  gui·olsen — design tokens v2 (CSS custom properties)
   Generated from design-tokens.json — keep both in sync.
 
-  NEW PROJECT CHECKLIST: only edit the --color-* vars and the two --font-* vars below.
-  Everything else (sizes, spacing, radius) is the fixed system scale — leave as is.
+  NEW PROJECT CHECKLIST: only edit the --color-* base-500 values (and the ramp
+  steps around them, if you're generating full tints/shades per client) and the
+  two --font-* family vars below. Everything else — size, radius, stroke,
+  padding, gap, layout — is the fixed system scale. Leave it alone.
+
+  Colors marked PLACEHOLDER are provisional neutrals standing in until real
+  brand hex is picked. Swap the whole ramp, not just 500, before shipping.
 */
 
 :root {
-  /* ---- per-project: edit these for every new client ---- */
-  --color-primary: #0F0F0F;
-  --color-primary-hover: #1A1A1A;
-  --color-primary-tint: #F4F4F4;
-  --color-secondary: #555555;
-  --color-secondary-hover: #6E6E6E;
-  --color-secondary-tint: #E5E5E5;
-  --color-accent: #0066FF;
-  --color-accent-hover: #0052CC;
-  --color-accent-tint: #E6F0FF;
-  --white: #FFFFFF;
-  --black: #0F0F0F;
+  /* ---- per-project: primary ramp — PLACEHOLDER ---- */
+  --color-primary-100: #F5F5F5;
+  --color-primary-200: #E6E6E6;
+  --color-primary-300: #CFCFCF;
+  --color-primary-400: #A8A8A8;
+  --color-primary-500: #7A7A7A; /* base */
+  --color-primary-600: #565656;
+  --color-primary-700: #3D3D3D;
+  --color-primary-800: #262626;
+  --color-primary-900: #141414;
 
-  --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-  --font-secondary: 'Syne', sans-serif;
+  /* ---- per-project: secondary ramp — PLACEHOLDER ---- */
+  --color-secondary-100: #F6F3EF;
+  --color-secondary-200: #E9E3DA;
+  --color-secondary-300: #D3C9BB;
+  --color-secondary-400: #B0A08C;
+  --color-secondary-500: #8A7A66; /* base */
+  --color-secondary-600: #635546;
+  --color-secondary-700: #453A2E;
+  --color-secondary-800: #2B241C;
+  --color-secondary-900: #16120E;
 
-  /* ---- fixed system scale: don't edit per project ---- */
-  --font-display: 64px;
-  --font-h1: 40px;
-  --font-h2: 28px;
-  --font-h3: 18px;
-  --font-body-lg: 18px;
-  --font-body: 16px;
-  --font-body-sm: 14px;
-  --font-eyebrow: 12px;
-  --font-caption: 12px;
-  --font-button: 14px;
+  /* ---- per-project: accent ramp — PLACEHOLDER ---- */
+  --color-accent-100: #EEF0FC;
+  --color-accent-200: #D6DBF6;
+  --color-accent-300: #B0B9ED; /* primary button focus ring */
+  --color-accent-400: #7C89DF;
+  --color-accent-500: #4C5FD5; /* base */
+  --color-accent-600: #3948AD;
+  --color-accent-700: #2A3585;
+  --color-accent-800: #1C245D;
+  --color-accent-900: #10163A;
 
-  /* Spacing — name matches the px value */
-  --space-4: 4px;
-  --space-8: 8px;
-  --space-12: 12px;
-  --space-16: 16px;
-  --space-24: 24px;
-  --space-32: 32px;
-  --space-48: 48px;
-  --space-64: 64px;
-  --space-96: 96px;
-  --space-128: 128px;
+  /* ---- fixed system scale: grey ---- */
+  --color-grey-100: #F4F5F6; /* text-color-dark */
+  --color-grey-200: #E5E7E9;
+  --color-grey-300: #CBD0D4; /* text-color-light */
+  --color-grey-400: #A6ADB4;
+  --color-grey-500: #7C848C;
+  --color-grey-600: #575F66;
+  --color-grey-700: #3D434A;
+  --color-grey-800: #262A2E;
+  --color-grey-900: #131517;
 
-  --radius-none: 0px;
-  --radius-sm: 2px;
-  --radius-md: 4px;
-  --radius-lg: 8px;
-  --radius-rounded: 999px;
+  /* ---- fixed system scale: white / black ---- */
+  --color-white-400: #FFFFFF;
+  --color-white-500: #FFFFFF; /* base — bg-light */
+  --color-white-600: #F5F4F1;
+  --color-black-400: #2B2B2B;
+  --color-black-500: #0F0F0F; /* base — carried from v1 ink */
+  --color-black-600: #000000;
+
+  /* ---- fixed system scale: semantic ---- */
+  --color-alert-400: #D9A54A;
+  --color-alert-500: #B8791A;
+  --color-alert-600: #8F5C12;
+  --color-success-400: #4FA868;
+  --color-success-500: #2E7D46;
+  --color-success-600: #1F5C32;
+  --color-error-400: #DD6656;
+  --color-error-500: #C4362B;
+  --color-error-600: #96271F;
+
+  /* ---- text / surface roles ---- */
+  --text-color-light: var(--color-grey-300);
+  --text-color-dark: var(--color-grey-100);
+  --accent-text-color-light: var(--color-primary-500);
+  --accent-text-color-dark: var(--color-accent-500);
+  --bg-light: var(--color-white-500);
+  --bg-dark: var(--color-primary-500);
+
+  /* ---- per-project: fonts ---- */
+  --font-display: 'Fraunces', Georgia, serif; /* NEW — proposed pairing, swap if it's not the direction */
+  --font-heading: 'Syne', sans-serif;
+  --font-text: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+
+  /* ---- fixed system scale: type sizes (re-derived to fit the new size scale) ---- */
+  --font-display-size: 64px;
+  --font-h1: 48px;          /* was 40 in v1 — bumped, display now sits above it */
+  --font-h2: 36px;          /* was 28 in v1 */
+  --font-h3: 28px;          /* was 18 in v1 */
+  --font-h4: 20px;          /* NEW — no v1 equivalent */
+  --font-text-lg: 18px;     /* = v1 body-lg, unchanged */
+  --font-text-sm: 16px;     /* was 14 in v1 — 14 wasn't on the new scale */
+  --font-button-text: 16px; /* was 14 in v1 — matches text-sm, stays on-scale */
+  --font-caption: 12px;     /* = v1 caption, unchanged */
+
+  /* ---- fixed system scale: size / spacing ramp ---- */
+  --size-4: 4px;   --size-6: 6px;   --size-8: 8px;   --size-10: 10px;
+  --size-12: 12px; --size-16: 16px; --size-18: 18px; --size-20: 20px;
+  --size-24: 24px; --size-28: 28px; --size-32: 32px; --size-36: 36px;
+  --size-40: 40px; --size-48: 48px; --size-56: 56px; --size-64: 64px;
+
+  /* ---- fixed system scale: radius / stroke ---- */
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-xl: 12px;
+  --radius-rounded: 9999px;
+  --stroke-sm: 1px;
+  --stroke-lg: 2px;
+
+  /* ---- fixed system scale: component padding / gap ---- */
+  --padding-sm: 16px; --padding-md: 20px; --padding-lg: 28px; --padding-xl: 48px;
+  --gap-sm: 16px;     --gap-md: 20px;     --gap-lg: 28px;     --gap-xl: 48px;
+
+  --button-padding-sm: 10px 16px;
+  --button-padding-md: 12px 24px;
+  --button-padding-lg: 16px 32px;
+
+  /* ---- fixed system scale: layout ---- */
+  --container-padding-desktop: 20px;
+  --section-max-width-desktop: 1200px;
+  --section-padding-desktop: 96px;
+  --section-padding-tablet: 64px;
+  --section-padding-mobile: 56px;
+
+  /* Elementor default breakpoints (max-width) */
+  --breakpoint-tablet: 1024px;
+  --breakpoint-mobile: 767px;
 }
